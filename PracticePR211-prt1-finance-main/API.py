@@ -2,6 +2,7 @@ import json
 import requests
 import os
 
+
 class PolygonAPI:
 
     def __init__(self, api_key):
