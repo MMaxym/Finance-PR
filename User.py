@@ -1,6 +1,5 @@
 import pyrebase
 
-
 class User:
     def __init__(self, name, surname, email, password, balance, portfel):
         self.name = name
@@ -47,3 +46,23 @@ class User:
 
     def getPortfel(self):
         return self.portfel
+
+    def __dict__(self):
+        return {
+            'name': self.name,
+            'surname': self.surname,
+            'email': self.email,
+            'password': self.password,
+            'balance': self.balance,
+            'portfel': self.portfel
+        }
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'surname': self.surname,
+            'email': self.email,
+            'password': self.password,
+            'balance': self.balance,
+            'portfel': self.portfel
+        }

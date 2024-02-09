@@ -1,9 +1,9 @@
 import pyrebase
-
 class MyDB:
     def __init__(self, firebaseConfig):
         self.firebase = pyrebase.initialize_app(firebaseConfig)
         self.database = self.firebase.database()
+
 
     def insertValues(self, table_name, data):
         try:

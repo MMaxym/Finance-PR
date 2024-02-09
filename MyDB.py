@@ -4,6 +4,7 @@ class MyDB:
         self.firebase = pyrebase.initialize_app(firebaseConfig)
         self.database = self.firebase.database()
 
+
     def insertValues(self, table_name, data):
         try:
             # Check if the record already exists based on some criteria (e.g., email)

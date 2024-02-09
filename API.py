@@ -118,6 +118,3 @@ class PolygonAPI:
 
 
 
-# Hello World
-# Hello World
-# -----------
