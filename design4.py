@@ -65,7 +65,7 @@ class Ui_MainWindow4(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "form4"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Поповнення балансу"))
         self.label_2.setText(_translate("MainWindow", "200.00 $"))
         self.label_4.setText(_translate("MainWindow", "Сума поповнення"))
         self.pushButton_2.setText(_translate("MainWindow", "Скасувати"))

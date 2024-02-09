@@ -70,10 +70,11 @@ class Ui_MainWindow6(object):
         self.label_6.setAlignment(QtCore.Qt.AlignCenter)
         self.label_6.setObjectName("label_6")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(940, 20, 211, 31))
+        self.label_3.setGeometry(QtCore.QRect(850, 10, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignRight)
         self.label_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.label_3.setStyleSheet("color: #DDE4FE;")
         self.label_3.setObjectName("label_3")
@@ -91,7 +92,7 @@ class Ui_MainWindow6(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "form6"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Продаж акцій"))
         self.pushButton_3.setText(_translate("MainWindow", "Повернутися назад"))
         self.label_4.setText(_translate("MainWindow", "Акція"))
         self.label_2.setText(_translate("MainWindow", "200.00 $"))

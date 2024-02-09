@@ -134,10 +134,11 @@ class Ui_MainWindow3(object):
         self.pushButton_5.setStyleSheet("background-color: #2A34CA; color: white;  border-radius: 20px;")
         self.pushButton_5.setObjectName("pushButton_5")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(920, 20, 211, 31))
+        self.label_3.setGeometry(QtCore.QRect(850, 10, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignRight)
         self.label_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.label_3.setStyleSheet("color: #DDE4FE;")
         self.label_3.setObjectName("label_3")
@@ -148,7 +149,7 @@ class Ui_MainWindow3(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "form3"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Головна сторінка"))
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
         self.tableWidget.setSortingEnabled(__sortingEnabled)

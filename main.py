@@ -24,3 +24,4 @@ user = User("Ivan", "Ivanov", "sun0237", "12345","5000", "0")
 print(user.getName())
 user_data = user.to_dict()
 myDb.insertValues("-Nq7uPdYs2oDhvUnL9ez", user_data)
+
