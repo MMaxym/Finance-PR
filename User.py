@@ -1,5 +1,3 @@
-import pyrebase
-
 class User:
     def __init__(self, name, surname, email, password, balance, portfel):
         self.name = name

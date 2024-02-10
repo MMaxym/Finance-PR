@@ -55,10 +55,32 @@ class Ui_MainWindow7(object):
         brush.setStyle(QtCore.Qt.NoBrush)
         item.setBackground(brush)
         self.tableWidget.setItem(0, 0, item)
-        self.tableWidget.horizontalHeader().setVisible(True)
+        self.tableWidget.setColumnWidth(0, 175)
+        self.tableWidget.setColumnWidth(1, 155)
+        self.tableWidget.setColumnWidth(2, 155)
+        self.tableWidget.setColumnWidth(3, 50)
+        self.tableWidget.verticalHeader().setDefaultSectionSize(50)
+        self.tableWidget.horizontalHeader().setVisible(False)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
         self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.verticalHeader().setHighlightSections(True)
+        # Для першого стовбчика (вирівнювання по лівому краю)
+        for row in range(self.tableWidget.rowCount()):
+            item = QtWidgets.QTableWidgetItem()
+            item.setTextAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+            self.tableWidget.setItem(row, 0, item)
+
+        # Для другого стовбчика (вирівнювання по центру)
+        for row in range(self.tableWidget.rowCount()):
+            item = QtWidgets.QTableWidgetItem()
+            item.setTextAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+            self.tableWidget.setItem(row, 1, item)
+
+        # Для третього стовбчика (вирівнювання по правому краю)
+        for row in range(self.tableWidget.rowCount()):
+            item = QtWidgets.QTableWidgetItem()
+            item.setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+            self.tableWidget.setItem(row, 2, item)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(10, 20, 151, 31))
         font = QtGui.QFont()

@@ -11,29 +11,32 @@ class PolygonAPI:
     def save_stock_info(self, symbol, filename):
         # Зберігає інформацію про певний символ акцій у JSON файл
         stock_info = self.get_stock_info(symbol)
-        try:
-            with open(filename, 'w') as f:
-                json.dump(stock_info, f)
-        except Exception as e:
-            print(f"Error saving stock info to {filename}: {e}")
+        if stock_info:
+            try:
+                with open(filename, 'w') as f:
+                    json.dump(stock_info, f)
+            except Exception as e:
+                print(f"Error saving stock info to {filename}: {e}")
 
     def save_ticker_types(self, filename):
         # Зберігає всі типи тікерів у JSON файл
         ticker_types = self.get_ticker_types()
-        try:
-            with open(filename, 'w') as f:
-                json.dump(ticker_types, f)
-        except Exception as e:
-            print(f"Error saving ticker types to {filename}: {e}")
+        if ticker_types:
+            try:
+                with open(filename, 'w') as f:
+                    json.dump(ticker_types, f)
+            except Exception as e:
+                print(f"Error saving ticker types to {filename}: {e}")
 
     def save_aggregate_bars(self, symbol, multiplier, timespan, start, end, filename):
         # Зберігає агреговані бари для певного символу акцій у JSON файл
         aggregate_bars = self.get_aggregate_bars(symbol, multiplier, timespan, start, end)
-        try:
-            with open(filename, 'w') as f:
-                json.dump(aggregate_bars, f)
-        except Exception as e:
-            print(f"Error saving aggregate bars to {filename}: {e}")
+        if aggregate_bars:
+            try:
+                with open(filename, 'w') as f:
+                    json.dump(aggregate_bars, f)
+            except Exception as e:
+                print(f"Error saving aggregate bars to {filename}: {e}")
 
     def get_stock_info(self, symbol):
         # Метод для отримання інформації про певний символ акцій
@@ -102,9 +105,8 @@ class PolygonAPI:
     def create_file(self, filename):
         # Створює пустий JSON файл, якщо він ще не існує
         try:
-            if not os.path.exists(filename):
-                with open(filename, 'w') as f:
-                    f.write('')
+            with open(filename, 'w') as f:
+                pass
         except Exception as e:
             print(f"Error creating file {filename}: {e}")
         return None
@@ -114,7 +116,12 @@ class PolygonAPI:
         if response.status_code == 200:
             return response.json()
         else:
-            return {'error': f"Failed to fetch data: {response.status_code}"}
-
-
-
+            error_message = f"Failed to fetch data: {response.status_code}"
+            try:
+                error_detail = response.json().get('error')
+                if error_detail:
+                    error_message += f"\nDetails: {error_detail}"
+            except: 
+                pass
+            print(error_message)
+            return None

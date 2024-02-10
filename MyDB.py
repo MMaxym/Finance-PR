@@ -1,4 +1,6 @@
 import pyrebase
+
+
 class MyDB:
     def __init__(self, firebaseConfig):
         self.firebase = pyrebase.initialize_app(firebaseConfig)
